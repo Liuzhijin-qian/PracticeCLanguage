@@ -4,7 +4,7 @@
 
 
 void menu();
-int ADD(int n, int j);
-int SUB(int n, int j);
-int MUL(int n, int j);
-int DIV(int n, int j);
+int Add(int x, int y);
+int Sub(int x, int y);
+int Mul(int x, int y);
+int Div(int x, int y);

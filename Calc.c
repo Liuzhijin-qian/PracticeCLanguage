@@ -8,3 +8,24 @@ void menu()
 	printf("*     0.EXIT      *\n");
 	printf("*******************\n");
 }
+
+
+int Add(int x,int y)
+{
+	return (x + y);
+}
+
+int Sub(int x, int y)
+{
+	return (x - y);
+}
+
+int Mul(int x, int y)
+{
+	return (x * y);
+}
+
+int Div(int x, int y)
+{
+	return (x / y);
+}
