@@ -3,56 +3,30 @@
 int main()
 {
 	int input = 0;
-	int x = 0;
-	int y = 0;
+	int (*p[5])(int x, int y) = { 0,Add,Sub,Mul,Div };
 	do
 	{
 		menu();
-		printf("请输入想要的功能：");
+		printf("请输入要进行的操作->\n");
 		scanf("%d", &input);
-		switch (input)
+
+		if (input >= 1 && input <= 4)
 		{
-			
-		case 1:
+			int x = 0; int y = 0;
 			printf("请输入第一个操作数->\n");
 			scanf("%d", &x);
-			printf("请输入第一个操作数->\n");
+			printf("请输入第二个操作数->\n");
 			scanf("%d", &y);
-			printf("%d\n", Add(x, y));
-			break;
-		case 2:
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &x);
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &y);
-			printf("%d\n",Sub(x,y));
-			break;
-		case 3:
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &x);
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &y);
-			printf("%d\n", Mul(x, y));
-			break;
-		case 4:
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &x);
-			printf("请输入第一个操作数->\n");
-			scanf("%d", &y);
-			printf("%d\n", Div(x, y));
-			break;
-		case 0:
-			printf("退出成功\n");
-			break;
-		default :
-			printf("输入错误，请重新输入！");
-			break;
+			printf("%d\n", (*p[input])( x , y));
+		}
+		else
+		{
+			printf("输入的数字错误，请重新输入\n");
 		}
 
 
+
 	} while (input);
-
-
 
 	return 0;
 }
