@@ -1,33 +1,27 @@
 #include  <stdio.h>
-#define   N   3
-int fun(int  (*a)[N])
-{ int  i,j,m1,m2,row,colum;
-  m1=m2=0;
-  for(i=0; i<N; i++)
-  { j=N-i-1;  m1+=a[i][i];  m2+=a[i][j];  }
-  if(m1!=m2) return  0;
-  for(i=0; i<N; i++) {
+#include  <string.h>
+#include  <ctype.h>
+void fun(char  *s)
+{ int  k[26]={0},n,i,max=0;    char  ch;
+  while(*s)
+  { if( isalpha(*s) ) {
 /**********found**********/
-     row=colum= 0;
-     for(j=0; j<N; j++)sss
-     {  row+=a[i][j];  colum+=a[j][i];  }
+      ch=tolower(*s	);
+      n=ch-'a';
 /**********found**********/
-     if( (row!=colum) != (row!=m1) ) return 0;
+      k[n]+= 1 ;
+    }
+    s++;
+/**********found**********/
+    if(max<k[n]) max= k[n] ;
   }
-/**********found**********/
-  return  1;
+  printf("\nAfter count :\n");
+  for(i=0; i<26;i++)
+     if (k[i]==max) printf("\nletter  \'%c\' :  %d times\n",i+'a',k[i]);
 }
 void main()
-{ int  x[N][N],i,j;
-  printf("Enter number for array:\n");
-  for(i=0; i<N; i++)
-    for(j=0; j<N; j++)  scanf("%d",&x[i][j]);
-  printf("Array:\n");
-  for(i=0; i<N; i++)
-  {  for(j=0; j<N; j++)  printf("%3d",x[i][j]);
-     printf("\n");
-  }
-  if(fun(x)) printf("The Array is a magic square.\n");
-  else printf("The Array isn't a magic square.\n");
+{ char  s[81];
+  printf("\nEnter a string:\n\n");  gets(s);
+  fun(s);
 }
 
