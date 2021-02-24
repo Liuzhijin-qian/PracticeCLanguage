@@ -1,26 +1,26 @@
-#include <stdio.h>
 #include <conio.h>
-#include <stdlib.h>
-float fun (float h )
-{
-  long t;
-  t=(h*1000+5)/10;      /*单精度数h乘以1000后再加5，相当于对h中的第三位小数进行四舍五入
-                        除以10后将其赋给一个长整型数时就把第三位小数后的数全部截去*/
-  return (float)t/100;  /*除以100，保留2位小数*/
+#include <stdio.h>
+#define  M 10
+int  a[M][M] = {0} ;
+
+/**************found**************/
+void fun(int a[][M], int m)
+{  int j, k ;
+   for (j = 0 ; j < m ; j++ )
+        for (k = 0 ; k < m ; k++ )
+/**************found**************/
+          a[j][k] = (k+1) * (j+1) ;
 }
-void main()
-{
-  FILE *wf;
-  float a;
-  system("CLS");
-  printf("Enter a: ");
-  scanf ("%f",&a);
-  printf("The original data is :  ");
-  printf("%f\n\n", a);
-  printf("The  result : %f\n", fun(a));
-/******************************/
-  wf=fopen("out.dat","w");
-  fprintf(wf,"%f",fun(8.32533));
-  fclose(wf);
-/*****************************/
+
+void main ( )
+{  int  i, j, n ;
+
+   printf ( " Enter n : " ) ;  scanf ("%d", &n ) ;
+   fun ( a, n ) ;
+   for ( i = 0 ; i < n ; i++)
+   {    for (j = 0 ; j < n ; j++)
+          printf ( "%4d", a[i][j] ) ;
+        printf ( "\n" ) ;
+   }
 }
+
