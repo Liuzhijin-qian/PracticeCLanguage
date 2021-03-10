@@ -33,6 +33,7 @@ void ReadText(FILE  *fr)
 /**********found**********/
      printf("%s",str);
      fgets(str,81,fr);
+     printf("ÎÒÏ²»¶ÄãÑ½£¬ÄãÖªµÀÂï£¿"\n);
    }
 }
 
